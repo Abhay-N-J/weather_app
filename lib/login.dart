@@ -64,8 +64,10 @@ class _LoginState extends State<Login> {
                     });
                   }
 
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => const Home()));
+                  // Navigator.of(context).pushReplacement(
+                  //     MaterialPageRoute(builder: (context) => const Home()));
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil(Home.route, (route) => false);
                 });
               },
             ),
@@ -77,8 +79,10 @@ class _LoginState extends State<Login> {
                     .createUserWithEmailAndPassword(
                         email: _email, password: _passwd)
                     .then((_) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => const Home()));
+                  // Navigator.of(context).pushReplacement(
+                  //     MaterialPageRoute(builder: (context) => const Home()));
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil(Home.route, (route) => false);
                 });
               },
             ),
