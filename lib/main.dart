@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:weather_app/home.dart';
 import 'package:weather_app/login.dart';
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Login(),
-        Home.route: (contect) => const Home(),
+        Home.route: (context) => const Home(),
       },
     );
   }

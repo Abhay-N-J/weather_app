@@ -38,7 +38,7 @@ dependencies:
   http: ^0.13.5
   firebase_core: ^2.2.0
   firebase_auth: ^4.1.2
-  firebase_dynamic_links: ^5.0.5
+  # firebase_dynamic_links: ^5.0.5
 
 dev_dependencies:
   flutter_test:
