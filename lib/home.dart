@@ -36,10 +36,12 @@ class _HomeState extends State<Home> {
 
   void lat_lon_weather() async {
     var location_result = await http
-        .get(Uri.parse('$city_api_url${"lat=$lat&lon=$lon"}&appid=$app_id'));
+        .get(Uri.parse('$lat_api_url${"lat=$lat&lon=$lon"}&appid=$app_id_2'));
     var result = json.decode(location_result.body);
+    print('$city_api_url${"lat=$lat&lon=$lon"}&appid=$app_id_2');
 
     setState(() {
+      city = result["name"];
       weather = result["weather"][0]["main"];
       temp = (result["main"]["temp"] - 273.15);
       temp = num.parse(temp.toStringAsFixed(1)) as double;
@@ -106,7 +108,8 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.all(10),
                   child: TextField(
                     onSubmitted: (String input) {
-                      city_weather(input: input);
+                      // lat_lon_weather();
+                      lat = input;
                     },
                     keyboardType: TextInputType.text,
                     selectionWidthStyle: BoxWidthStyle.tight,
